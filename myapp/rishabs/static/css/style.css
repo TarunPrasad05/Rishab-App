@@ -1,0 +1,110 @@
+body{
+    margin: 0px;
+}
+
+.main-body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(rgb(80, 78, 78),white);
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+h3{
+    color: rgb(68, 68, 68);
+}
+
+.error{
+    color: black;
+    background-color: rgb(255, 138, 138);
+    width: 90%;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.navbar1{
+    background-color:#333;
+    align-self:stretch;
+}
+
+.nav-comp{
+    list-style-type: none;
+    justify-content: space-evenly;
+    display: flex;
+    margin: 0;
+    padding: 0; 
+  
+}
+
+li{
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover {
+    background-color: #111;
+  }
+
+.photo1{
+    padding-top: 2rem;
+    width:15rem;
+    height: 10;
+}
+
+.photo1 > img{
+    width: 100%;
+}
+
+.forms > form {
+
+    display: flex;
+    flex-direction: column;
+}
+
+form>button{
+    align-self: center;
+}
+
+.name1
+{
+    width: 228px;
+    height: 25px;
+    padding: 5px;
+    margin-top: 10px;
+    border: 1px solid ;
+    border-radius: 4px;
+}
+
+.button1
+{
+    margin-top: 20px;
+    height: 30px;
+    width: 63px;
+    border-radius: 5px;
+    background-color: #212121;
+    color: white;
+}
+
+
+.button1:hover{
+    cursor: pointer;
+    background-color: white;
+    color:#212121;
+    transition: 1s;
+}
+
+
+
+
+

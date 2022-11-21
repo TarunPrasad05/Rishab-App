@@ -1,0 +1,20 @@
+{% extends 'rishabs/layout1.html' %}
+{% block content %}
+    <div>
+        <h1>RISHAB'S APP</h1>
+        <h3>OTP Verification</h2>
+    </div>
+    <div class="forms">
+        <form action="{% url 'verify' %}" method="POST">
+            {% csrf_token %}
+            <input type="tel" class="name1" placeholder="Enter your number" name="phone_number">
+            <input type="number" class="name1" placeholder="Enter your OTP" name="otp1">
+
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+            
+            <button class="button1">NEXT</button>
+        </form>
+    </div>
+{% endblock %}

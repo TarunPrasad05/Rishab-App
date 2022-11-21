@@ -1,0 +1,25 @@
+{% extends 'rishabs/layout1.html' %}
+{% block content %}
+    <div>
+        <h1>RISHAB'S APP</h1>
+        <h3>Please login to continue </h3>
+    </div>
+    <div class="forms">
+        <form action="{% url 'login_view' %}" method="POST">
+            {% csrf_token %}
+
+            <input type="text" class="name1" placeholder="Enter your number " name="username">
+            <input type="password" class="name1" placeholder="Enter your password " name="password">
+            
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+
+            <div>
+                <button class="button1" type="submit">LOGIN</button>
+                <a href="{% url 'register_view' %}">Don't have an account?</a>
+            </div>
+
+        </form>
+    </div>
+{% endblock %}
