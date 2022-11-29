@@ -1,0 +1,39 @@
+{% extends 'rishabs/layout2.html' %}
+{% block content %}
+
+
+    <div>
+        <br>
+        <h1>Order Submitted!</h1>
+        <p>You should receive the invoice email soon.</p>
+    </div>
+
+
+    <div class="order-contain">
+        <div>
+            <div>
+                <h3>Order Summary:</h3>
+            </div>
+            
+            <table class="styled-table">
+                <thead>
+                    <th>Item</th>
+                    <th>Price</th>
+                </thead>
+                <tbody>
+                    {% for item in items %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>&#x20b9; {{ item.price }}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr id="order-total">
+                        <th>Total</th>
+                        <th>&#x20b9; {{ price }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

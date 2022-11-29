@@ -1,0 +1,82 @@
+{% extends 'restaurent/layout3.html' %}
+{% block content %}
+<div class="order-details">
+
+    <div class="orderid-name">
+        <div>
+            <h3>Order ID: {{order.id}}</h3>
+        </div>
+        <div>
+            <h3>Name: {{order.order_user.username}}</h3>
+        </div>
+    </div>
+
+    <div class="order-details-div">
+        <table class="styled-table1">
+            <thead>
+                <th>Item</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                {% for item in order.items.all %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>&#x20b9; {{ item.price }}</td>
+                </tr>
+                {% endfor %}
+                <tr id="order-total">
+                    <td>Total</td>
+                    <td>&#x20b9; {{ order.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="order-footer">
+        {% if order.is_paid %}
+            <div class="order-footer-l">
+                <h3>&#x2705; Order has been Paid</h3>
+            </div>
+
+            <div class="order-footer-r">
+                {% if order.is_delivered %}
+                    <h3>&#x2705; Order has been Delivered</h3>
+                {% else %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <button type="submit" class="nice" name="del"><h3>Mark as Delivered</h3></button>
+                    </form>
+                {% endif %}
+            </div>
+
+        {% else %}
+            <div class="order-footer-l"></div>
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <button type="submit" class="nice" name="can"><h3>Cancel Order</h3></button>
+
+                    <button type="submit" class="nice" name="pay"><h3>Mark as Paid</h3></button>
+                    
+                </form>
+            </div>
+        {% endif %}
+
+    </div>    
+
+    <script>
+        function autoRefresh() {
+            window.location = window.location.href;
+        }
+        setInterval('autoRefresh()', 5000);
+    </script>
+
+    {% if feedback %}
+        <div><h3>FEEDBACK:</h3></div>
+        <div><h3>{{ feedback }}</h3></div>
+    {% else %}
+    {% endif %}
+</div>
+
+
+{% endblock %}

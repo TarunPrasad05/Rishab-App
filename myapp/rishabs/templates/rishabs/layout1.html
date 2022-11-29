@@ -3,6 +3,8 @@
 <html>
     <head>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <meta charset="UTF-8">
+        <link rel="icon" href="static/images/favicon.ico">
         <title>Rishabs App</title>
     </head>
     <body>
@@ -10,8 +12,8 @@
             <navbar class="navbar1">
                 <ul class="nav-comp">
                     {% if user.is_authenticated %}
-                        <li><a href="#">CART</a></li>
-                        <li><a href="#">PROFILE</a></li>
+                        <li><a href="{% url 'order' %}">MENU</a></li>
+                        <li><a href="{% url 'profile_view' %}">PROFILE</a></li>
                         <li><a href="{% url 'logout_view' %}">LOGOUT</a></li>
                     {% else %}
                         <li><a href="{% url 'index' %}">HOME</a></li>
@@ -20,11 +22,13 @@
                     {% endif %}
                 </ul>
             </navbar>
-            <div class="photo1" >
-                <img src="{% static 'images/icon.png' %}">
+            <div class="new-ui">
+                <div class="photo1" >
+                    <img src="{% static 'images/icon.png' %}">
+                </div>
+                {% block content %}
+                {% endblock %}
             </div>
-            {% block content %}
-            {% endblock %}
         </div>
     </body>
 </html>

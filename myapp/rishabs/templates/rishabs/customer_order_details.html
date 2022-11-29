@@ -1,0 +1,50 @@
+{% extends 'rishabs/layout2.html' %}
+{% block content %}
+
+
+<div class="order-details">
+<div>
+    <h3>Order Summary</h3>
+</div>
+<div class="orderid-name">
+
+    <div>
+        <h3>Order ID: {{order.id}}</h3>
+    </div>
+    <div>
+        <h3>Name: {{order.order_user.username}}</h3>
+    </div>
+</div>
+
+<div class="order-details-div">
+    <table class="styled-table1">
+        <thead>
+            <th>Item</th>
+            <th>Price</th>
+        </thead>
+        <tbody>
+            {% for item in order.items.all %}
+            <tr>
+                <td>{{ item.name }}</td>
+                <td>&#x20b9; {{ item.price }}</td>
+            </tr>
+            {% endfor %}
+            <tr id="order-total">
+                <td>Total</td>
+                <td>&#x20b9; {{ order.price }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="order-buttons">
+    <form method="GET" action="{% url 'rorder_details' order.pk %}">
+            <button class="button4" type="submit">Confirm Order</button>
+    </form>
+    <form method="POST" action="{% url 'rorder_details' order.pk %}">
+        {% csrf_token %}
+        <button class="button4" type="submit">Cancel Order</button>
+    </form>
+</div>
+</div>
+
+{% endblock %}

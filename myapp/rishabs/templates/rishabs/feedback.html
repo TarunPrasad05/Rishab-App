@@ -1,0 +1,19 @@
+{% extends 'rishabs/layout2.html' %}
+{% block content %}
+
+<div class="feedback-bg">
+<form action="{% url 'feedback' %}" method="POST">
+    {% csrf_token %}
+    <div class="feedback-area">
+        <textarea placeholder="Please give your valueable Feedback!" rows="20" name="comment[]" id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"></textarea>
+    </div>
+    <div  class="feedback">
+        <button class="button3" type="submit">Submit</button>
+    </div>
+</form>
+</div>
+
+
+
+
+{% endblock %}

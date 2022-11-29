@@ -1,6 +1,12 @@
 {% extends 'rishabs/layout1.html' %}
 {% block content %}
     <div>
-        <h1>RISHAB'S APP</h1>
+        <div><h2>WELCOME TO RISHABS</h2></div>
+
+        <form action="{% url 'order' %}" method="GET">
+            <div >
+                <button class="button2" type="submit">PLACE ORDER!</button>
+            </div>
+        </form>
     </div>
 {% endblock %}

@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+*{
+    font-family: "Inter";
+}
+body{
+    margin: 0px;
+    background-color: #e4f1f1;
+}
+
+.main-body{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #e4f1f1;
+    padding-bottom: 20px;
+    text-align: center;
+}
+.error{
+    color: black;
+    background-color: rgb(255, 138, 138);
+    width: 90%;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.navbar1{
+    background-color:#152D35;
+    align-self:stretch;
+}
+
+.nav-comp{
+    list-style-type: none;
+    justify-content: space-evenly;
+    display: flex;
+    margin: 0;
+    padding: 0; 
+  
+}
+
+.design-bg{
+    background-image: url('../images/bg-pattern1.png');
+    background-size: cover;
+    background-repeat: none;
+    padding-block: 1.5rem;
+}
+
+li{
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    padding-left: 0px;
+    padding-right: 0px;
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    padding-left: 20px;
+    text-align: left;
+}
+
+.name{
+    flex:1;
+    text-align: right; 
+    padding-right: 20px;
+}
+
+
+.options{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.options > a{
+    background-color: #e4f1f1;
+}
+
+.option{
+    background-color: #152D35;
+    border-radius: 5px;
+    padding-inline: 2rem;
+    padding-block: 1rem;
+    transition: all 0.3s;
+    color: white;
+}
+
+.option:hover{
+    background-color:#e4f1f1;
+    color: black;
+    box-shadow: 7px 7px 10px #152D35;
+    border: 2px solid #152D35;
+}
+
+.head-name
+{
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 13px;
+    margin-inline: 20px;
+    font-size: 2em;
+    border-bottom: 1px solid;
+}
+
+.items
+{
+    text-align: left;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: space-between;
+    background-color: #345B63;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    color: white;
+}
+
+.items:hover{
+    background-color:#e4f1f1;
+    color: black;
+    box-shadow: 10px 10px 10px #152D35;
+    border: 2px solid #152D35;
+}
+
+.i-name{
+    padding-left: 1rem;
+    width: 18rem;    
+}
+
+.i-check{
+    padding-right: 1rem;
+    align-self: center;
+}
+
+.i-check > input{
+    width: 2rem;
+    height: 1rem;
+}
+
+.i-price{
+    padding-right: 2rem;
+}
+
+
+.head{
+    padding-bottom: 60px;
+}
+
+.button2{
+    width: 80%;
+    padding: 0.5rem;
+    padding-block: 1.3rem;
+    border-radius: 5px;
+    background-color: #112031;
+    color: white;
+    margin-top: -10px;
+}
+
+.button2:hover{
+    cursor: pointer;
+    background-color:#e4f1f1;
+    color: black;
+    box-shadow: 10px 10px 10px #152D35;
+    border: 3px solid #112031;
+    transition: 0.3s;
+}
+
+.option_a{
+    text-decoration: none;
+    background-color: black;
+    color: black;
+}
+
+.bill{
+    display: flex;
+    align-items: center;
+}
+
+.order-contain{
+    background-image: linear-gradient(to left top, #d4ecdd, #b3d0c4, #93b4ac, #759995, #587e7f, #496e72, #3a5e64, #2c4f57, #26464e, #203e46, #1b353d, #152d35);
+    margin-top: 3rem;
+    width: 80%;
+    align-self: center;
+    color: white;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px #152D35;
+}
+
+.styled-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #152D35;
+    color: white;
+    text-align: center;
+    border-top: 2px solid #e4f1f1;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+
+.styled-table tbody tr {
+    background-color: #e4f1f1;
+    color: black;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #e4f1f1;
+}
+
+#order-total{
+    background-color: #152D35;
+    color: white;
+    text-align: center;
+}
+
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;  
+}
+
+.loader::after{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border: 15px solid #345B63;
+    border-top-color: #152D35;
+    border-radius: 50%;
+    animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading{
+    from { transform: rotate(0turn);}
+    to { transform: rotate(1turn);}
+}

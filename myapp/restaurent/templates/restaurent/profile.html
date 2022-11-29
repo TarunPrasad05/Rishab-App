@@ -1,0 +1,37 @@
+{% extends 'restaurent/layout1.html' %}
+{% block content %}
+    <div class="holder">
+        <div class="holder-head">
+            <h2>USER DETAILS</h2>
+        </div>
+        <div class="holder-contents">
+            <div class="holder-items">
+                <div>
+                    <p >Username:</p>
+                </div>
+                <div>
+                    <p>{{ user.username }}</p>
+                </div>
+            </div>
+
+            <div class="holder-items">
+                <div>
+                    <p >Mail:</p>
+                </div>
+                <div>
+                    <p>{{ user.email }}</p>
+                </div>
+            </div>
+
+            <div class="holder-items">
+                <div>
+                    <p >Phone No:</p>
+                </div>
+                <div>
+                    <p>{{ user.phone_number }}</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,92 @@
+{% extends 'rishabs/layout2.html' %}
+{% block content %}
+
+{% if order.is_delivered %}
+    <div>
+        <br>
+        <p>Thankyou!</p>
+        <p>You should receive the invoice email soon.</p>
+    </div>
+
+{% else %}
+{% endif %}
+
+<div class="order-details">
+    <div>
+        <h3>Order Summary</h3>
+    </div>
+    <div class="orderid-name">
+
+        <div>
+            <h3>Order ID: {{order.id}}</h3>
+        </div>
+        <div>
+            <h3>Name: {{order.order_user.username}}</h3>
+        </div>
+    </div>
+
+    <div class="order-details-div">
+        <table class="styled-table1">
+            <thead>
+                <th>Item</th>
+                <th>Price</th>
+            </thead>
+            <tbody>
+                {% for item in order.items.all %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>&#x20b9; {{ item.price }}</td>
+                </tr>
+                {% endfor %}
+                <tr id="order-total">
+                    <td>Total</td>
+                    <td>&#x20b9; {{ order.price }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="order-footer">
+        {% if order.is_paid %}
+            <div class="order-footer-l">
+                <h3>&#x2705; Order has been Paid</h3>
+            </div>
+
+            <div class="order-footer-r">
+                {% if order.is_delivered %}
+                    <h3>&#x2705; Order has been Delivered</h3>
+                {% else %}
+                    <h3>&#10060; Order is being Prepared</h3>
+                {% endif %}
+            </div>
+
+        {% else %}
+            <div class="order-footer-l"></div>
+                <div class="loader">Waiting for Payment</div>
+            </div>
+        {% endif %}
+
+    </div>    
+</div>
+
+{% if order.is_delivered %}
+    <div>
+        <form action="{% url 'feedback' %}" method="GET">
+            <div  class="feedback">
+                <button class="button3" type="submit">FeedBack</button>
+            </div>
+        </form>
+    </div>
+
+{% else %}
+{% endif %}
+
+
+<script>
+    function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 5000);
+</script>
+
+{% endblock %}

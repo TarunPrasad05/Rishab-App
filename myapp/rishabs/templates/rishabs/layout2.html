@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{% static 'css/new.css' %}">
+        <link rel="stylesheet" href="{% static 'css/rdash.css' %}">
+        <meta charset="UTF-8">
+        <link rel="icon" href="static/images/favicon.ico">
+        <title>Rishabs App</title>
+    </head>
+    <body>
+        <div class="main-body">
+            <navbar class="navbar1">
+                <ul class="nav-comp">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'order' %}">MENU</a></li>
+                        <li><a href="{% url 'profile_view' %}">PROFILE</a></li>
+                        <li><a href="{% url 'logout_view' %}">LOGOUT</a></li>
+                    {% else %}
+                        <li><a href="{% url 'index' %}">HOME</a></li>
+                        <li><a href="{% url 'login_view' %}">LOGIN</a></li>
+                        <li><a href="{% url 'register_view' %}">REGISTER</a></li>
+                    {% endif %}
+                </ul>
+            </navbar>
+            {% block content %}
+            {% endblock %}
+        </div>
+    </body>
+</html>

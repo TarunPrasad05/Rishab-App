@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+*{
+    font-family: "Inter";
+}
 body{
     margin: 0px;
+    background-color: #e4f1f1;
+    background-image: url('../images/bg-pattern1.png');
+    background-size: cover;
+    background-repeat: none;
+    
 }
 
 .main-body{
@@ -9,25 +18,27 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: linear-gradient(rgb(80, 78, 78),white);
     padding-bottom: 20px;
     text-align: center;
+    background-color: #e4f1f1;
+    background-image: url('../images/bg-pattern1.png');
+    background-size: cover;
+    background-repeat: none;
 }
 
-h3{
-    color: rgb(68, 68, 68);
-}
 
 .error{
     color: black;
     background-color: rgb(255, 138, 138);
-    width: 90%;
-    padding: 1rem;
-    border-radius: 10px;
+    width: 80%;
+    border-radius: 4px;
+    padding-inline: 1rem;
+    padding-block: 0.8rem;
+    margin-left: 0.8rem;
 }
 
 .navbar1{
-    background-color:#333;
+    background-color:#152D35;
     align-self:stretch;
 }
 
@@ -37,7 +48,6 @@ h3{
     display: flex;
     margin: 0;
     padding: 0; 
-  
 }
 
 li{
@@ -50,61 +60,128 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
+}
 
-  li a:hover {
-    background-color: #111;
-  }
+li a:hover {
+text-decoration: underline;
+}
 
 .photo1{
     padding-top: 2rem;
     width:15rem;
-    height: 10;
 }
 
 .photo1 > img{
     width: 100%;
 }
 
-.forms > form {
 
-    display: flex;
-    flex-direction: column;
-}
-
-form>button{
-    align-self: center;
-}
 
 .name1
 {
-    width: 228px;
-    height: 25px;
-    padding: 5px;
-    margin-top: 10px;
-    border: 1px solid ;
+    width: 80%;
+    margin-bottom: 10px;
+    border: 1px solid #dcdcdc;
     border-radius: 4px;
+    padding-inline: 1rem;
+    padding-block: 0.8rem;
 }
 
 .button1
 {
-    margin-top: 20px;
-    height: 30px;
-    width: 63px;
-    border-radius: 5px;
-    background-color: #212121;
+    width: 90.5%;
+    padding-block: 0.8rem;
+    padding-inline: 1rem;
+    border-radius: 4px;
+    background-color: #112031;
     color: white;
-}
+    border: none;
 
+}
 
 .button1:hover{
     cursor: pointer;
-    background-color: white;
-    color:#212121;
-    transition: 1s;
+    background-color: #345B63;
+    color:white;
+    transition: 0.3s;
+}
+
+.button2{
+    width: 80%;
+    padding: 0.5rem;
+    padding-block: 1rem;
+    border-radius: 5px;
+    background-color: #112031;
+    color: white;
+    border: none;
+}
+
+.button2:hover{
+    cursor: pointer;
+    background-color: #345B63;
+    color:white;
+    transition: 0.3s;
+}
+
+.new-ui{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    margin-top: 3rem;
+    background-image: linear-gradient(to left top, #d4ecdd, #b3d0c4, #93b4ac, #759995, #587e7f, #496e72, #3a5e64, #2c4f57, #26464e, #203e46, #1b353d, #152d35);
+    width:60%;
+}
+ 
+.holder{
+    background-color: #e4f1f1;
+    padding: 1.5rem;
+    width: 80%;
+    margin-top: 1rem;
+    border-radius: 1em;
+}
+
+.holder-contents{
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.holder-head{
+    padding-block:1rem;
+    padding-inline: 1rem;
+    margin-inline: 1rem;
+    box-shadow: 5px 5px 10px #152D35;
+    background-color: #152D35;
+    color: white;
+    margin-bottom: 10px;
+    border-radius: 0.5rem;
 }
 
 
+.holder-items{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5rem;
+}
 
+.order-button{
+    padding-block: 1.5rem;
+    padding-inline: 0.8rem;
+    border-radius: 5px;
+    background-color: #112031;
+    color: white;
+    border: none;
+}
 
+.order-s{
+    text-decoration: none;
+    color: white;
+}
 
+.order-button:hover{
+    cursor: pointer;
+    background-color: #345B63;
+    color:white;
+    transition: 0.3s;
+}

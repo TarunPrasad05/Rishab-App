@@ -1,0 +1,119 @@
+{% extends 'restaurent/layout3.html' %}
+{% block content %}
+
+<div class="overview">
+    <div class="overview_l">
+        <p>Todays Revenue</p>
+        <p>&#x20b9; {{ total_revenue }}</p>
+    </div>
+    <div  class="overview_r">
+        <p>Todays Orders</p>
+        <p>{{ total_orders }}</p>
+    </div>
+</div>
+
+<div class="table-box">
+    <div>
+        <h1>Pending Orders</h1>
+    </div>
+
+    <div class="box">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Paid?</th>
+                    <th>Delivered?</th>
+                    <th>Order Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    {% if order.is_delivered %}
+                    {% else %}
+                        <tr>
+                            <td>{{ order.pk }}</td>
+                            <td>{{ order.order_user.username }}</td>
+                            <td>&#x20b9; {{ order.price }}</td>
+                            {% if order.is_paid %} 
+                                <td><h3>&#x2705;</h3></td>
+                            {% else %}
+                                <td><h3>&#10060;</h3></td>
+                            {% endif %}
+            
+                            {% if order.is_delivered %} 
+                                <td><h3>&#x2705;</h3></td>
+                            {% else %}
+                                <td><h3>&#10060;</h3></td>
+                            {% endif %}
+            
+                            <td class>
+                                <h2><a class="order-s" href="{% url 'order_details' order.pk %}">&#9998;</a></h2>
+                            </td>
+                        </tr>
+                    {% endif %}
+            {% endfor %}
+    
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="table-box">
+    <div>
+        <h1>Completed Orders</h1>
+    </div>
+
+    <div class="box">
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Order ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Paid?</th>
+                    <th>Delivered?</th>
+                    <th>Order Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for order in orders %}
+                    {% if order.is_delivered %}
+                        <tr>
+                            <td>{{ order.pk }}</td>
+                            <td>{{ order.order_user.username }}</td>
+                            <td>&#x20b9; {{ order.price }}</td>
+                            {% if order.is_paid %} 
+                                <td><h3>&#x2705;</h3></td>
+                            {% else %}
+                                <td><h3>&#10060;</h3></td>
+                            {% endif %}
+            
+                            {% if order.is_delivered %} 
+                                <td><h3>&#x2705;</h3></td>
+                            {% else %}
+                                <td><h3>&#10060;</h3></td>
+                            {% endif %}
+            
+                            <td class>
+                                <h2><a class="order-s" href="{% url 'order_details' order.pk %}">&#9998;</a></h2>
+                            </td>
+                        </tr>
+                    {% else %}
+                    {% endif %}
+            {% endfor %}
+    
+            </tbody>
+        </table>
+    </div>
+</div>
+<script>
+    function autoRefresh() {
+        window.location = window.location.href;
+    }
+    setInterval('autoRefresh()', 5000);
+</script>
+
+{% endblock %}

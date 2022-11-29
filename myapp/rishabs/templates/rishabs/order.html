@@ -1,0 +1,116 @@
+{% extends 'rishabs/layout2.html' %}
+{% block content %}
+
+ 
+    <div>
+        <form action="{% url 'order' %}" method="POST">
+            {% csrf_token %}
+            <div class="main-body">
+                
+                <div class="header">
+                    <div class="menu">
+                        <h1>Menu</h1>
+                    </div>
+
+                    <div class="name">
+                        <h3>{{ user.username }}</h1>
+                    </div>
+                </div>
+
+                {% if message %}
+                <div>
+                    <h3>{{ message }}</h1>
+                </div>
+                {% else %}
+                {% endif %}
+
+                {% if error %}
+                <div class="error-div">
+                    <p class="div-error">{{ error }}</p>
+                </div>
+                {% endif %}
+
+                {% if fed %}
+                    <div>
+                        <h3>{{ fed }}</h1>
+                    </div>
+                {% else %}
+                {% endif %}
+        
+                <div class="design-bg">    
+                    <div class="options">
+                        <a class="option_a" href="#juices">
+                            <div class="option">
+                                <p>Juices</p>
+                            </div>
+                        </a>
+    
+                        <a class="option_a" href="#hot">
+                            <div class="option">
+                                <p>Hot Drinks</p>
+                            </div>
+                        </a>
+                        
+                        <a class="option_a" href="#snack">
+                            <div class="option">
+                                <p>Snacks</p>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
+    
+                <div class="head">
+                    <div class="head-name" id="juices">Juices</div>
+                    {% for jui in juice %}
+                    <div class="items">
+                        <div class="i-name">
+                            <p >{{jui.name}}</p>
+                        </div>
+                        <div class="i-price">
+                            <p >&#x20b9; {{jui.price}}</p>
+                        </div>
+                        <div class="i-check">
+                            <input  type="checkbox" name="items[]" value="{{ jui.pk }}">
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                    <div class="head-name" id="hot">Hot Drinks</div>
+                    {% for hot in hot_drinks %}
+                    <div class="items">
+                        <div class="i-name">
+                            <p >{{hot.name}}</p>
+                        </div>
+                        <div class="i-price">
+                            <p >&#x20b9; {{hot.price}}</p>
+                        </div>
+                        <div class="i-check">
+                            <input  type="checkbox" name="items[]" value="{{ hot.pk }}">
+                        </div>
+                    </div>
+                    {% endfor %}
+            
+                    <div class="head-name" id="snack">Snacks</div>
+                    {% for snack in snacks %}
+                    <div class="items">
+                        <div class="i-name">
+                            <p >{{snack.name}}</p>
+                        </div>
+                        <div class="i-price">
+                            <p >&#x20b9; {{snack.price}}</p>
+                        </div>
+                        <div class="i-check">
+                            <input  type="checkbox" name="items[]" value="{{ snack.pk }}">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            <div>
+                <button class="button2" type="submit">PLACE ORDER!</button>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
